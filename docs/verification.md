@@ -51,4 +51,4 @@ Reviewed these captured images:
 
 Ignored `.verification/` contains raw reports and traces for this checkout. The mutation record is `.verification/mutation-proof.json`. The restored full run is `.verification/1791007028854-38193/`. The independent agent run is `.verification/1791006134749-29094/`. Regenerate evidence with the commands above after cloning.
 
-GitHub Actions is configured but has not run remotely. No remote repository was created, and nothing was pushed or deployed. The browser gate currently uses desktop Chromium. Mobile layout was inspected manually. Checkout has no real payment integration or durable order storage.
+The repository is now public. Main and four real PRs passed GitHub Actions. See [remote selection proof](github-verification.md). No application deployment was performed. The browser gate currently uses desktop Chromium. Mobile layout was inspected manually. Checkout has no real payment integration or durable order storage.

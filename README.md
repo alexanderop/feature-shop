@@ -45,4 +45,8 @@ Use `pnpm --silent verify ... --json` for parseable stdout. Reports and traces l
 
 The workflow always starts and runs static checks. Pull requests run only affected E2E scenarios. Set the repository variable `SHADOW_FULL_SUITE=true` to also run the full suite on each pull request while auditing selection. Main, weekly, and manually dispatched runs execute all scenarios.
 
-Selective PR checks can miss undeclared dependencies. Main and scheduled runs detect those after merge. Enable shadow verification if a full pre-merge suite is required. Configure `Shop verification` as the required check after pushing this repository to GitHub.
+Selective PR checks can miss undeclared dependencies. Main and scheduled runs detect those after merge. Enable shadow verification if a full pre-merge suite is required. Configure `Shop verification` as the required check in GitHub branch protection.
+
+## Live CI proof
+
+The project is public at [alexanderop/feature-shop](https://github.com/alexanderop/feature-shop). Four real PRs verified checkout 4/14, search 5/14, cart 10/14, and shared styling 14/14 E2E selections. Every run passed. See [GitHub Actions evidence](docs/github-verification.md) for PR links, run links, and the verification method.
