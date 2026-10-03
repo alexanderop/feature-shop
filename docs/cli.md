@@ -21,4 +21,4 @@ Exit code 0 means the command succeeded. An explicitly empty selection is report
 
 Each browser run writes `selection.json`, `result.json`, `runner.log`, and `playwright.json` beneath `.verification/<timestamp>-<pid>/`. HTML reports and failure traces use that run directory too. The Playwright JSON report contains failed steps, errors, source locations, and attachments.
 
-Runs build the application before starting it. `VERIFY_SKIP_BUILD=1` skips compilation when the existing production build is known to match the source. This flag does not reuse an existing server. Port 3401 must be available. The initial POC serializes CLI runs against that port.
+Runs build the application before starting it. `VERIFY_SKIP_BUILD=1` skips compilation when the existing production build is known to match the source. This flag does not reuse an existing server. Port 3401 must be available. The initial POC serializes CLI runs against that port. An atomic process lock rejects concurrent generation and execution with exit code 3. Do not run a separate Nuxt build while a verifier is serving its output.

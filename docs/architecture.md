@@ -27,3 +27,12 @@ The agent CLI delegates generation, browser execution, server lifecycle, and rep
 Two design candidates compared a central registry with distributed manifests and a generated graph. A separate same-family model review recommended the central registry. The chosen design avoids discovery and generated metadata infrastructure for four features. It retains dependency validation and conservative shared-file behavior from the alternative.
 
 Model the Domain shaped the typed cart, receipt result, and registry. Compose Vue Components shaped focused feature views and explicit dependencies. Test Where the Failure Happens keeps purchase verification against the built Nuxt server.
+
+## Documentation used
+
+- [Playwright fixtures](https://playwright.dev/docs/test-fixtures)
+- [Page object models](https://playwright.dev/docs/pom)
+- [Test isolation](https://playwright.dev/docs/browser-contexts)
+- [Playwright best practices](https://playwright.dev/docs/best-practices)
+- [Playwright-BDD](https://github.com/vitalets/playwright-bdd)
+- [Playwright CI and changed-test limitations](https://playwright.dev/docs/ci#fail-fast)

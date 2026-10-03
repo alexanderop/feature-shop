@@ -2,6 +2,8 @@
 
 A Nuxt 4 and Nuxt UI ecommerce POC with executable Gherkin, Playwright fixtures and page objects, and an agent-friendly affected-test CLI.
 
+![Fieldwork desktop shop](docs/screenshots/desktop.png)
+
 ## Run the shop
 
 Use Node 24 and pnpm 10.
@@ -41,6 +43,6 @@ Use `pnpm --silent verify ... --json` for parseable stdout. Reports and traces l
 
 ## GitHub Actions
 
-The workflow always starts and runs static checks. Pull requests run affected scenarios. Full-suite shadow verification is enabled by default to check the selector before trusting it. Set the repository variable `AFFECTED_ONLY=true` to use only selected E2E scenarios on pull requests. Main, weekly, and manually dispatched runs execute all scenarios.
+The workflow always starts and runs static checks. Pull requests run only affected E2E scenarios. Set the repository variable `SHADOW_FULL_SUITE=true` to also run the full suite on each pull request while auditing selection. Main, weekly, and manually dispatched runs execute all scenarios.
 
-Selective PR checks can miss undeclared dependencies. Main and scheduled runs detect those after merge. Keep shadow verification enabled if a full pre-merge suite is required. Configure `Shop verification` as the required check after pushing this repository to GitHub.
+Selective PR checks can miss undeclared dependencies. Main and scheduled runs detect those after merge. Enable shadow verification if a full pre-merge suite is required. Configure `Shop verification` as the required check after pushing this repository to GitHub.

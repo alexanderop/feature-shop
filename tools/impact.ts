@@ -41,7 +41,12 @@ export function consumers(initial: Iterable<FeatureId>): FeatureId[] {
 }
 
 export function owners(path: string): FeatureId[] {
-  return featureIds.filter(id => features[id].paths.some(prefix => path === prefix || path.startsWith(prefix)))
+  return featureIds.filter(id => features[id].paths.some(prefix => {
+    if (path === prefix) return true
+    if (prefix.endsWith('/')) return path.startsWith(prefix)
+    if (/\.[a-z]+$/i.test(prefix)) return false
+    return path.startsWith(`${prefix}/`) || path.startsWith(`${prefix}.`)
+  }))
 }
 
 export function selectAffected(paths: string[], scenarios: Scenario[], fallback?: string): Selection {

@@ -39,7 +39,7 @@ jobs:
           VERIFY_HEAD: ${{ github.event.pull_request.head.sha }}
         run: pnpm --silent verify run --affected --base "$VERIFY_BASE" --head "$VERIFY_HEAD" --json
       - name: Run the complete suite
-        if: github.event_name != 'pull_request' || vars.AFFECTED_ONLY != 'true'
+        if: github.event_name != 'pull_request' || vars.SHADOW_FULL_SUITE == 'true'
         env:
           VERIFY_SKIP_BUILD: '1'
         run: pnpm --silent verify run --all --json

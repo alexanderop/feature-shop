@@ -20,7 +20,8 @@ export function validateBoundaries(cwd: string): void {
         : specifier.startsWith('~/') ? join(cwd, 'app', specifier.slice(2))
         : specifier.startsWith('~~/') ? join(cwd, specifier.slice(3)) : undefined
       if (!target) continue
-      const imported = owners(relative(cwd, target))[0]
+      const targetPath = relative(cwd, target)
+      const imported = owners(targetPath)[0] ?? owners(`${targetPath}.ts`)[0] ?? owners(`${targetPath}/index.ts`)[0]
       if (imported && imported !== owner && !features[owner].dependsOn.includes(imported)) {
         throw new Error(`${file} imports ${imported} without declaring the dependency`)
       }

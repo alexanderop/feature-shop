@@ -22,7 +22,7 @@ describe('affected scenario selection', () => {
     expect(consumers(['catalog'])).toEqual(['catalog', 'search', 'product-detail', 'cart', 'checkout'])
     expect(selected(['server/api/products/index.get.ts'])).toEqual(['search', 'detail', 'cart', 'checkout', 'purchase'])
   })
-  it.each(['pnpm-lock.yaml', 'nuxt.config.ts', 'tools/impact.ts', 'tests/e2e/fixtures/test.ts', 'app/components/Button.vue', 'surprise.ts'])(
+  it.each(['pnpm-lock.yaml', 'nuxt.config.ts', 'tools/impact.ts', 'tests/e2e/fixtures/test.ts', 'app/components/Button.vue', 'surprise.ts', 'server/api/cart-other.get.ts', 'server/utils/cart.tsx'])(
     'runs everything for global or unknown file %s', path => {
       expect(selectAffected([path], scenarios).mode).toBe('all')
       expect(selected([path])).toHaveLength(5)
