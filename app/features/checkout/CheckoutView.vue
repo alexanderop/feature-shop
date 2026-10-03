@@ -50,7 +50,7 @@ async function placeOrder(): Promise<void> {
       <div class="empty-state empty-card"><h1>Your cart is empty</h1><p>Add something useful before checking out.</p><NuxtLink class="button" to="/">Explore the collection</NuxtLink></div>
     </template>
     <template v-else>
-      <p class="eyebrow">Final details</p>
+      <p class="eyebrow">Delivery and payment</p>
       <h1>Checkout</h1>
       <div class="checkout-layout">
         <form class="checkout-form" novalidate @submit.prevent="placeOrder">
