@@ -1,0 +1,9 @@
+node_modules/
+.nuxt/
+.output/
+.features-gen/
+playwright-report/
+test-results/
+.verification/
+.env
+.DS_Store

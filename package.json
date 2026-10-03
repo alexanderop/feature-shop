@@ -1,0 +1,41 @@
+{
+  "name": "feature-shop",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.28.2",
+  "engines": {
+    "node": ">=22.12"
+  },
+  "scripts": {
+    "dev": "nuxt dev --host 127.0.0.1 --port 3400",
+    "build": "nuxt build",
+    "start": "node .output/server/index.mjs",
+    "postinstall": "nuxt prepare",
+    "typecheck": "nuxt typecheck && tsc -p tsconfig.tools.json",
+    "lint": "oxlint app server shared tools tests --deny-warnings",
+    "test": "vitest run",
+    "bdd": "bddgen",
+    "verify": "tsx tools/verify.ts",
+    "check": "pnpm lint && pnpm typecheck && pnpm test && pnpm verify validate",
+    "e2e": "pnpm verify run --all"
+  },
+  "dependencies": {
+    "@nuxt/ui": "4.11.3",
+    "nuxt": "4.5.2",
+    "tailwindcss": "^4.1.0",
+    "vue": "^3.5.0",
+    "zod": "^4.0.0"
+  },
+  "devDependencies": {
+    "@cucumber/gherkin": "^42.0.1",
+    "@cucumber/messages": "^34.2.1",
+    "@playwright/test": "1.63.0",
+    "@types/node": "^24.0.0",
+    "oxlint": "1.86.0",
+    "playwright-bdd": "9.2.1",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0",
+    "vitest": "5.0.3",
+    "vue-tsc": "^3.1.0"
+  }
+}
