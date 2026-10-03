@@ -19,7 +19,7 @@ async function applyFilters(): Promise<void> {
     <section class="hero wrap">
       <p class="eyebrow">Field notes · Edition 01</p>
       <h1>Made for the everyday outside.</h1>
-      <p>Small-run essentials with honest materials, useful details, and room to gather a little dust.</p>
+      <p>Everyday outdoor essentials with honest materials and useful details.</p>
     </section>
     <section class="catalog wrap" aria-labelledby="catalog-title">
       <div class="section-heading">
