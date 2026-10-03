@@ -22,7 +22,7 @@ async function update(productId: string, quantity: number): Promise<void> {
     <h1>Cart</h1>
     <div v-if="cart.lines.length === 0" class="empty-state empty-card">
       <h2>Your cart is empty</h2>
-      <p>Start with one good thing, then see where it takes you.</p>
+      <p>Your next field kit starts with one useful thing.</p>
       <NuxtLink class="button" to="/">Explore the collection</NuxtLink>
     </div>
     <div v-else class="cart-layout">
